@@ -1,0 +1,249 @@
+/* Authentication Pages for TravelVista India */
+/* All authentication forms and styles are localized for Indian users */
+.auth-body {
+    background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    color: #0EA5E9;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.auth-header h2 {
+    font-size: 1.5rem;
+    color: #1E293B;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.auth-header p {
+    color: #64748B;
+    font-size: 1rem;
+}
+
+.auth-form {
+    margin-bottom: 2rem;
+}
+
+.auth-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.auth-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.auth-form label {
+    display: block;
+    color: #1E293B;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #0EA5E9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #64748B;
+    user-select: none;
+}
+
+.checkbox input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    margin-right: 0.5rem;
+}
+
+.checkmark {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #E2E8F0;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkmark {
+    background: #0EA5E9;
+    border-color: #0EA5E9;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.forgot-password {
+    color: #0EA5E9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #0284C7;
+}
+
+.btn-auth {
+    width: 100%;
+    background: linear-gradient(135deg, #0EA5E9, #0284C7);
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+    background: linear-gradient(135deg, #0284C7, #0369A1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+}
+
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #E2E8F0;
+}
+
+.auth-divider span {
+    background: white;
+    padding: 0 1rem;
+    color: #64748B;
+    font-size: 0.9rem;
+}
+
+.auth-links {
+    text-align: center;
+}
+
+.auth-links p {
+    margin-bottom: 0.5rem;
+    color: #64748B;
+}
+
+.auth-links a {
+    color: #0EA5E9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+    color: #0284C7;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #E2E8F0;
+}
+
+.auth-footer a {
+    color: #64748B;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+    color: #0EA5E9;
+}
+
+/* Admin Authentication */
+.admin-auth {
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+}
+
+.admin-card {
+    border: 2px solid #334155;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.admin-card .auth-header h1 {
+    color: #F59E0B;
+}
+
+.admin-btn {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+
+.admin-btn:hover {
+    background: linear-gradient(135deg, #D97706, #B45309);
+}

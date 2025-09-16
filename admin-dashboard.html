@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TravelVista</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-nav">
+            <div class="admin-logo">
+                <h2>🛡️ TravelVista Admin</h2>
+            </div>
+            <div class="admin-user">
+                <span>Welcome, Admin</span>
+                <a href="admin-login.html" class="logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="admin-menu">
+                <a href="#dashboard" class="menu-item active" data-tab="dashboard">
+                    📊 Dashboard
+                </a>
+                <a href="#packages" class="menu-item" data-tab="packages">
+                    🎁 Manage Packages
+                </a>
+                <a href="#bookings" class="menu-item" data-tab="bookings">
+                    📋 View Bookings
+                </a>
+                <a href="#users" class="menu-item" data-tab="users">
+                    👥 Manage Users
+                </a>
+                <a href="#destinations" class="menu-item" data-tab="destinations">
+                    🌍 Destinations
+                </a>
+                <a href="#reports" class="menu-item" data-tab="reports">
+                    📈 Reports
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Tab -->
+            <div id="dashboard" class="admin-tab active">
+                <div class="admin-header-section">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome to the TravelVista management system</p>
+                </div>
+
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h3>1,234</h3>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-info">
+                            <h3>567</h3>
+                            <p>Active Bookings</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎁</div>
+                        <div class="stat-info">
+                            <h3>24</h3>
+                            <p>Total Packages</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-info">
+                            <h3>₹7,45,000</h3>
+                            <p>Monthly Revenue (INR)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-charts">
+                    <div class="chart-card">
+                        <h3>Recent Bookings</h3>
+                        <div class="recent-bookings">
+                            <div class="booking-item">
+                                <div class="booking-info">
+                                    <strong>Sarah Johnson</strong>
+                                    <strong>Rohit Sharma</strong>
+                                    <p>Goa Beach Retreat - ₹15,000</p>
+                                </div>
+                                <div class="booking-status pending">Pending</div>
+                            </div>
+                            <div class="booking-item">
+                                <div class="booking-info">
+                                    <strong>Michael Chen</strong>
+                                    <strong>Priya Singh</strong>
+                                    <p>Kerala Backwaters Experience - ₹18,000</p>
+                                </div>
+                                <div class="booking-status confirmed">Confirmed</div>
+                            </div>
+                            <div class="booking-item">
+                                <div class="booking-info">
+                                    <strong>Emma Wilson</strong>
+                                    <strong>Arjun Patel</strong>
+                                    <p>Himalayan Adventure Trek - ₹22,000</p>
+                                </div>
+                                <div class="booking-status confirmed">Confirmed</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Popular Destinations</h3>
+                        <div class="destination-stats">
+                            <div class="destination-stat">
+                                <span>Bali, Indonesia</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 85%"></div>
+                                </div>
+                                <span>85%</span>
+                            </div>
+                            <div class="destination-stat">
+                                <span>Paris, France</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 72%"></div>
+                                </div>
+                                <span>72%</span>
+                            </div>
+                            <div class="destination-stat">
+                                <span>Tokyo, Japan</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 68%"></div>
+                                </div>
+                                <span>68%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Packages Tab -->
+            <div id="packages" class="admin-tab">
+                <div class="admin-header-section">
+                    <h1>Manage Packages</h1>
+                    <button class="btn-primary" id="add-package-btn">Add New Package</button>
+                </div>
+
+                <div class="packages-table">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Package Name</th>
+                                <th>Destination</th>
+                                <th>Duration</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tropical Paradise Adventure</td>
+                                <td>Bali, Indonesia</td>
+                                <td>7 Days</td>
+                                <td>$899</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="table-actions">
+                                    <button class="btn-edit">Edit</button>
+                                    <button class="btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Romantic European Getaway</td>
+                                <td>Paris, France</td>
+                                <td>5 Days</td>
+                                <td>$1,299</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="table-actions">
+                                    <button class="btn-edit">Edit</button>
+                                    <button class="btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Greek Islands Explorer</td>
+                                <td>Santorini, Greece</td>
+                                <td>6 Days</td>
+                                <td>$1,099</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="table-actions">
+                                    <button class="btn-edit">Edit</button>
+                                    <button class="btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bookings Tab -->
+            <div id="bookings" class="admin-tab">
+                <div class="admin-header-section">
+                    <h1>View Bookings</h1>
+                    <div class="booking-filters">
+                        <select>
+                            <option>All Bookings</option>
+                            <option>Pending</option>
+                            <option>Confirmed</option>
+                            <option>Completed</option>
+                            <option>Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bookings-table">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Customer</th>
+                                <th>Package</th>
+                                <th>Travel Date</th>
+                                <th>Travelers</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#BK001</td>
+                                <td>Sarah Johnson<br><small>sarah@email.com</small></td>
+                                <td>Tropical Paradise Adventure</td>
+                                <td>2024-06-15</td>
+                                <td>2</td>
+                                <td>$1,798</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td class="table-actions">
+                                    <button class="btn-confirm">Confirm</button>
+                                    <button class="btn-cancel">Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#BK002</td>
+                                <td>Michael Chen<br><small>michael@email.com</small></td>
+                                <td>Japan Discovery Tour</td>
+                                <td>2024-07-20</td>
+                                <td>1</td>
+                                <td>$1,899</td>
+                                <td><span class="status-badge confirmed">Confirmed</span></td>
+                                <td class="table-actions">
+                                    <button class="btn-view">View</button>
+                                    <button class="btn-cancel">Cancel</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div id="users" class="admin-tab">
+                <div class="admin-header-section">
+                    <h1>Manage Users</h1>
+                    <div class="user-actions">
+                        <input type="text" placeholder="Search users..." class="search-input">
+                        <button class="btn-primary">Add User</button>
+                    </div>
+                </div>
+
+                <div class="users-table">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Join Date</th>
+                                <th>Bookings</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sarah Johnson</td>
+                                <td>sarah@email.com</td>
+                                <td>+1 (555) 123-4567</td>
+                                <td>2024-01-15</td>
+                                <td>3</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="table-actions">
+                                    <button class="btn-edit">Edit</button>
+                                    <button class="btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Michael Chen</td>
+                                <td>michael@email.com</td>
+                                <td>+1 (555) 987-6543</td>
+                                <td>2024-02-20</td>
+                                <td>1</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="table-actions">
+                                    <button class="btn-edit">Edit</button>
+                                    <button class="btn-delete">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Destinations Tab -->
+            <div id="destinations" class="admin-tab">
+                <div class="admin-header-section">
+                    <h1>Manage Destinations</h1>
+                    <button class="btn-primary">Add New Destination</button>
+                </div>
+
+                <div class="destinations-grid">
+                    <div class="destination-admin-card">
+                        <img src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Bali">
+                        <div class="destination-admin-info">
+                            <h3>Bali, Indonesia</h3>
+                            <p>4 Packages Available</p>
+                            <div class="destination-admin-actions">
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-admin-card">
+                        <img src="https://images.pexels.com/photos/161853/paris-sunset-france-monument-161853.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Paris">
+                        <div class="destination-admin-info">
+                            <h3>Paris, France</h3>
+                            <p>2 Packages Available</p>
+                            <div class="destination-admin-actions">
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-admin-card">
+                        <img src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Santorini">
+                        <div class="destination-admin-info">
+                            <h3>Santorini, Greece</h3>
+                            <p>3 Packages Available</p>
+                            <div class="destination-admin-actions">
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Tab -->
+            <div id="reports" class="admin-tab">
+                <div class="admin-header-section">
+                    <h1>Reports & Analytics</h1>
+                    <div class="report-filters">
+                        <select>
+                            <option>Last 30 Days</option>
+                            <option>Last 3 Months</option>
+                            <option>Last 6 Months</option>
+                            <option>Last Year</option>
+                        </select>
+                        <button class="btn-primary">Export Report</button>
+                    </div>
+                </div>
+
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3>Revenue Overview</h3>
+                        <div class="report-stat">
+                            <span class="stat-value">$89,450</span>
+                            <span class="stat-change positive">+12.5%</span>
+                        </div>
+                        <p>Compared to last month</p>
+                    </div>
+
+                    <div class="report-card">
+                        <h3>Booking Trends</h3>
+                        <div class="report-stat">
+                            <span class="stat-value">567</span>
+                            <span class="stat-change positive">+8.3%</span>
+                        </div>
+                        <p>Total bookings this month</p>
+                    </div>
+
+                    <div class="report-card">
+                        <h3>Customer Satisfaction</h3>
+                        <div class="report-stat">
+                            <span class="stat-value">4.8/5</span>
+                            <span class="stat-change positive">+0.2</span>
+                        </div>
+                        <p>Average rating</p>
+                    </div>
+
+                    <div class="report-card">
+                        <h3>Popular Packages</h3>
+                        <div class="popular-packages-list">
+                            <div class="package-stat">
+                                <span>Tropical Paradise</span>
+                                <span>45%</span>
+                            </div>
+                            <div class="package-stat">
+                                <span>European Getaway</span>
+                                <span>32%</span>
+                            </div>
+                            <div class="package-stat">
+                                <span>Greek Islands</span>
+                                <span>23%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="package-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Package</h2>
+            <form class="package-form">
+                <!-- Add Package form posts to PHP backend for CRUD operations -->
+                <form class="package-form" action="admin-package.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Package Name</label>
+                            <input type="text" name="package_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Destination</label>
+                            <input type="text" name="destination" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Duration</label>
+                            <input type="text" name="duration" placeholder="e.g., 7 Days" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input type="number" name="price" min="0" step="0.01" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea name="description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Image URL</label>
+                        <input type="url" name="image_url">
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-cancel">Cancel</button>
+                        <button type="submit" class="btn-primary">Add Package</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

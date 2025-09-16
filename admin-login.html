@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - TravelVista</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body class="auth-body admin-auth">
+    <div class="auth-container">
+        <div class="auth-card admin-card">
+            <div class="auth-header">
+                <h1>🛡️ Admin Panel</h1>
+                <h2>TravelVista Management</h2>
+                <p>Secure administrator access</p>
+            </div>
+
+            <form class="auth-form" id="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-email">Admin Email</label>
+                    <input type="email" id="admin-email" name="email" required placeholder="admin@travelvista.in">
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-password">Admin Password</label>
+                    <input type="password" id="admin-password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-code">Security Code</label>
+                    <input type="text" id="admin-code" name="security_code" placeholder="Enter 6-digit code (India)" required pattern="[0-9]{6}">
+                </div>
+
+                <button type="submit" class="btn-auth admin-btn">Access Dashboard</button>
+            </form>
+
+            <div class="auth-links">
+                <p><a href="login.html">User Login</a></p>
+            </div>
+
+            <div class="auth-footer">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin-auth.js"></script>
+</body>
+</html>
