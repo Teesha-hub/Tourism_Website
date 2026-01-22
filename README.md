@@ -27,21 +27,8 @@ The system allows users to explore and book tour packages while providing admins
 
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** PHP  
-- **Database:** MySQL  
-
----
-
-## 🧩 System Design
-
-The project is designed using an ER diagram consisting of:
-- Users
-- Admins
-- Tour Packages
-- Bookings
-- Payments  
-
-All modules are connected to ensure smooth data flow between frontend and backend.
-
+- **Database:** MySQL
+   
 ---
 
 ## 🎯 Project Objective
@@ -50,11 +37,3 @@ All modules are connected to ensure smooth data flow between frontend and backen
 - Build a complete frontend–backend web application  
 - Implement authentication and role-based access  
 - Create a visually appealing and responsive UI  
-
----
-
-## 👩‍💻 Author
-
-**Teesha Pinge**  
-Computer Engineering Student  
-Goa University
